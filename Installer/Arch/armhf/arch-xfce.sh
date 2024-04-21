@@ -2,7 +2,7 @@
 pkg install wget -y 
 folder=arch-fs
 cur=`pwd`
-dlink="https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Pacman/Manjaro"
+dlink="https://raw.githubusercontent.com/yaman/AndronixOrigin/master/Pacman/Manjaro"
 if [ -d "$folder" ]; then
 	first=1
 	echo "skipping downloading"
@@ -223,15 +223,15 @@ echo "removing image for some space"
 rm $tarball
 echo "You can now launch Arch Linux with the ./${bin} script"
 echo "Preparing additional component for the first time, please wait..."
-wget "https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/Installer/Arch/armhf/resolv.conf" -P arch-fs/root
-wget "https://raw.githubusercontent.com/Techriz/AndronixOrigin/master/Installer/Arch/armhf/additional.sh" -P arch-fs/root
+wget "https://raw.githubusercontent.com/yaman/AndronixOrigin/master/Installer/Arch/armhf/resolv.conf" -P arch-fs/root
+wget "https://raw.githubusercontent.com/yaman/AndronixOrigin/master/Installer/Arch/armhf/additional.sh" -P arch-fs/root
 rm -rf arch-fs/root/.bash_profile
 
 
 wget $dlink/xfce4_de.sh -O $folder/root/xfce4_de.sh
 echo " #!/bin/bash
 bash ~/additional.sh
-pacman -Syyuu --noconfirm && pacman -S wget sudo --noconfirm 
+pacman -Syyu --noconfirm && pacman -S wget sudo --noconfirm 
 mkdir -p ~/.vnc
 clear
 if [ ! -f /root/xfce4_de.sh ]; then
