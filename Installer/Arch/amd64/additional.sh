@@ -23,6 +23,6 @@ echo ""
 echo "Simply ignore it as it does not do anything harmful"
 echo ""
 echo "updating Arch packages"
-yes | LC_ALL=C.UTF-8 pacman -Suuyy 
+LC_ALL=C.UTF-8 pacman -Syyu --noconfirm
 echo ""
 echo ""
